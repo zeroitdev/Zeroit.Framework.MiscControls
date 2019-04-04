@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/33/branches/DotNet2/WControls/Drawable
+END
+CircularAxis.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/33/branches/DotNet2/WControls/Drawable/CircularAxis.cs
+END
+IDrawable.cs
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/33/branches/DotNet2/WControls/Drawable/IDrawable.cs
+END
+Needle.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/33/branches/DotNet2/WControls/Drawable/Needle.cs
+END
+DigitalBar.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/33/branches/DotNet2/WControls/Drawable/DigitalBar.cs
+END

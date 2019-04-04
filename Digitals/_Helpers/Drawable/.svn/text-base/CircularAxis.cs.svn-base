@@ -1,0 +1,663 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Drawing.Drawing2D;
+using System.Drawing;
+using WControls.Utils;
+using System.ComponentModel;
+
+namespace WControls.Drawable
+{
+    public enum TickPosition
+    {
+        Inside,
+        Middle,
+        Outside
+    }
+
+    public enum LabelPosition
+    {
+        Inside,
+        Outside
+    }
+
+    [TypeConverter(typeof(ExpandableObjectConverter))]
+    [Category("Appearance")]
+    [Description("The axis associated with this control")]
+    public class CircularAxis : IDisposable, IDrawable
+    {
+
+        #region Public Properties
+
+        /// <summary>
+        /// Raised when the appearance (color, etc) of the axis has changed
+        /// </summary>
+        [Description("Raised when the appearance (color, etc) of the axis has changed")]
+        public event EventHandler AppearanceChanged;
+
+        /// <summary>
+        /// Raised when the underlying graphics paths need to be recalculated
+        /// </summary>
+        [Description("Raised when the underlying graphics paths need to be recalculated")]
+        public event EventHandler LayoutChanged;
+
+        private int m_minVal = 0;
+        private int m_maxVal = 100;
+
+        /// <summary>
+        /// The minimum value for the axis
+        /// </summary>
+        [DefaultValue(0)]
+        [Description("The minimum value for the axis")]
+        public int MinValue
+        {
+            get { return m_minVal; }
+            set
+            {
+                m_minVal = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The maximum value for the axis
+        /// </summary>
+        [DefaultValue(100)]
+        [Description("The maximum value for the axis")]
+        public int MaxValue
+        {
+            get { return m_maxVal; }
+            set
+            {
+                m_maxVal = value;
+                OnLayoutChanged();
+            }
+        }
+
+        #region Main Axis
+
+        private float m_radPercent = .85f;
+        private Color m_axisColor = Color.Black;
+        private float m_axisWidth = 3f;
+        private int m_axisStartDegrees = 245;
+        private int m_axisLengthDegrees = 310;
+
+        /// <summary>
+        /// The percent of the whole control to use for the axis radius
+        /// </summary>
+        [DefaultValue(.85f)]
+        [Description("The percent of the whole control to use for the axis radius")]
+        public float RadiusPercent
+        {
+            get { return m_radPercent; }
+            set
+            {
+                if (value < 0 || value > 1)
+                {
+                    throw new ArgumentOutOfRangeException("value");
+                }
+                m_radPercent = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The color of the axis
+        /// </summary>
+        [DefaultValue(typeof(Color), "Black")]
+        [Description("The color of the axis")]
+        public Color AxisColor
+        {
+            get { return m_axisColor; }
+            set
+            {
+                m_axisColor = value;
+                OnAppearanceChanged();
+            }
+        }
+
+        /// <summary>
+        /// The width (weight) of the axis
+        /// </summary>
+        [DefaultValue(3f)]
+        [Description("The width (weight) of the axis")]
+        public float AxisWidth
+        {
+            get { return m_axisWidth; }
+            set
+            {
+                m_axisWidth = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// Where the axis starts in relation to the center
+        /// </summary>
+        [DefaultValue(245)]
+        [Description("Where the axis starts in relation to the center")]
+        public int AxisStartDegrees
+        {
+            get { return m_axisStartDegrees; }
+            set
+            {
+                if (Math.Abs(value) > 360)
+                {
+                    throw new ArgumentOutOfRangeException("value");
+                }
+                m_axisStartDegrees = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The length of the axis in degrees
+        /// </summary>
+        [DefaultValue(310)]
+        [Description("The length of the axis in degrees")]
+        public int AxisLengthDegrees
+        {
+            get { return m_axisLengthDegrees; }
+            set
+            {
+                if (Math.Abs(value) > 360)
+                {
+                    throw new ArgumentOutOfRangeException("value");
+                }
+                m_axisLengthDegrees = value;
+                OnLayoutChanged();
+            }
+        }
+
+        #endregion
+
+        #region Major Ticks
+
+        private float m_majorTickLength = 10f;
+        private int m_majorTickDivision = 10;
+        private float m_majorTickWidth = 3f;
+        private TickPosition m_majorTickPosition = TickPosition.Inside;
+
+        /// <summary>
+        /// The length of major ticks
+        /// </summary>
+        [DefaultValue(10f)]
+        [Description("The length of major ticks")]
+        public float MajorTickLength
+        {
+            get { return m_majorTickLength; }
+            set
+            {
+                m_majorTickLength = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The spacing between major ticks (major tick interval)
+        /// </summary>
+        [DefaultValue(10)]
+        [Description("The spacing between major ticks (major tick interval)")]
+        public int MajorTickDivision
+        {
+            get { return m_majorTickDivision; }
+            set
+            {
+                m_majorTickDivision = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The width (weight) of major ticks
+        /// </summary>
+        [DefaultValue(3f)]
+        [Description("The width (weight) of major ticks")]
+        public float MajorTickWidth
+        {
+            get { return m_majorTickWidth; }
+            set
+            {
+                m_majorTickWidth = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The position of major ticks
+        /// </summary>
+        [DefaultValue(typeof(TickPosition), "Inside")]
+        [Description("The position of major ticks")]
+        public TickPosition MajorTickPosition
+        {
+            get { return m_majorTickPosition; }
+            set
+            {
+                m_majorTickPosition = value;
+                OnLayoutChanged();
+            }
+        }
+
+        #endregion
+
+        #region Minor Ticks
+
+        private float m_minorTickLength = 10f;
+        private int m_minorTickDivision = 10;
+        private float m_minorTickWidth = 3f;
+        private TickPosition m_minorTickPosition = TickPosition.Inside;
+
+        /// <summary>
+        /// The length of minor ticks
+        /// </summary>
+        [DefaultValue(6f)]
+        [Description("The length of minor ticks")]
+        public float MinorTickLength
+        {
+            get { return m_minorTickLength; }
+            set
+            {
+                m_minorTickLength = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The spacing between minor ticks (minor tick interval)
+        /// </summary>
+        [DefaultValue(2)]
+        [Description("The spacing between minor ticks (minor tick interval)")]
+        public int MinorTickDivision
+        {
+            get { return m_minorTickDivision; }
+            set
+            {
+                m_minorTickDivision = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The width (weight) of minor ticks
+        /// </summary>
+        [DefaultValue(1.5f)]
+        [Description("The width (weight) of minor ticks")]
+        public float MinorTickWidth
+        {
+            get { return m_minorTickWidth; }
+            set
+            {
+                m_minorTickWidth = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The position of minor ticks
+        /// </summary>
+        [DefaultValue(typeof(TickPosition), "Inside")]
+        [Description("The position of minor ticks")]
+        public TickPosition MinorTickPosition
+        {
+            get { return m_minorTickPosition; }
+            set
+            {
+                m_minorTickPosition = value;
+                OnLayoutChanged();
+            }
+        }
+
+        #endregion
+
+        #region Label
+
+        private float m_labelOffset = 20f;
+        private LabelPosition m_labelPosition = LabelPosition.Inside;
+        private Color m_labelColor = Color.Black;
+        private string m_labelFontFamily = "Arial";
+        private float m_labelFontSize = 12f;
+        private FontStyle m_labelFontStyle = FontStyle.Regular;
+
+        /// <summary>
+        /// The distance from the axis to the center of each label
+        /// </summary>
+        [Description("The distance from the axis to the center of each label")]
+        [DefaultValue(20f)]
+        public float LabelOffset
+        {
+            get { return m_labelOffset; }
+            set
+            {
+                m_labelOffset = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The position of minor ticks
+        /// </summary>
+        [DefaultValue(typeof(LabelPosition), "Inside")]
+        [Description("The position of the labels")]
+        public LabelPosition LabelPosition
+        {
+            get { return m_labelPosition; }
+            set
+            {
+                m_labelPosition = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The color of the labels
+        /// </summary>
+        [DefaultValue(typeof(Color), "Black")]
+        [Description("The color of the labels")]
+        public Color LabelColor
+        {
+            get { return m_labelColor; }
+            set
+            {
+                m_labelColor = value;
+                OnAppearanceChanged();
+            }
+        }
+
+        /// <summary>
+        /// The font family for the labels
+        /// </summary>
+        [DefaultValue("Arial")]
+        [Description("The font family for the labels")]
+        public string LabelFontFamily
+        {
+            get { return m_labelFontFamily; }
+            set
+            {
+                m_labelFontFamily = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The font size for the labels
+        /// </summary>
+        [DefaultValue(12f)]
+        [Description("The font size for the labels")]
+        public float LabelFontSize
+        {
+            get { return m_labelFontSize; }
+            set
+            {
+                m_labelFontSize = value;
+                OnLayoutChanged();
+            }
+        }
+
+        /// <summary>
+        /// The font style for the labels
+        /// </summary>
+        [DefaultValue(typeof(FontStyle), "Regular")]
+        [Description("The font style for the labels")]
+        public FontStyle LabelFontStyle
+        {
+            get { return m_labelFontStyle; }
+            set
+            {
+                m_labelFontStyle = value;
+                OnLayoutChanged();
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        private GraphicsPath m_arcPath;
+        private GraphicsPath m_majorTicksPath;
+        private GraphicsPath m_minorTicksPath;
+        private GraphicsPath m_labelPath;
+        private Region m_redrawRegion;
+
+        public CircularAxis()
+        {
+            MinValue = 0;
+            MaxValue = 100;
+            RadiusPercent = .85f;
+            AxisWidth = 3f;
+            AxisColor = Color.Black;
+            AxisStartDegrees = 245;
+            AxisLengthDegrees = 310;
+
+            MajorTickLength = 10f;
+            MajorTickDivision = 10;
+            MajorTickWidth = 3f;
+            MajorTickPosition = TickPosition.Inside;
+
+            MinorTickLength = 6f;
+            MinorTickDivision = 2;
+            MinorTickWidth = AxisWidth * .5f;
+            MinorTickPosition = TickPosition.Inside;
+
+            LabelOffset = 20f;
+            LabelPosition = LabelPosition.Inside;
+            LabelColor = Color.Black;
+            LabelFontFamily = "Arial";
+            LabelFontSize = 12f;
+            LabelFontStyle = FontStyle.Regular;
+
+            m_redrawRegion = new Region();
+
+            CalculatePaths(new RectangleF());
+        }
+
+        public Region GetRedrawRegion()
+        {
+            return m_redrawRegion;
+        }
+
+        protected virtual void OnLayoutChanged()
+        {
+            if (LayoutChanged != null)
+            {
+                LayoutChanged(this, EventArgs.Empty);
+            }
+        }
+
+        protected virtual void OnAppearanceChanged()
+        {
+            if (AppearanceChanged != null)
+            {
+                AppearanceChanged(this, EventArgs.Empty);
+            }
+        }
+
+        public void Draw(Graphics g)
+        {
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            using (Pen axisPen = new Pen(AxisColor, AxisWidth))
+            using (Pen majorPen = new Pen(AxisColor, MajorTickWidth))
+            using (Pen minorPen = new Pen(AxisColor, MinorTickWidth))
+            using (Brush labelBrush = new SolidBrush(LabelColor))
+            {
+                axisPen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
+                majorPen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
+                minorPen.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
+
+                try
+                {
+                    g.DrawPath(axisPen, m_arcPath);
+                    g.DrawPath(majorPen, m_majorTicksPath);
+                    g.DrawPath(minorPen, m_minorTicksPath);
+                    g.FillPath(labelBrush, m_labelPath);
+                }
+                catch { }
+            }
+
+            //now these areas need to be redrawn if they change
+            m_redrawRegion.Dispose();
+            m_redrawRegion = new Region();
+            m_redrawRegion.Union(m_arcPath);
+            m_redrawRegion.Union(m_labelPath);
+            m_redrawRegion.Union(m_majorTicksPath);
+            m_redrawRegion.Union(m_minorTicksPath);
+        }
+
+        public void CalculatePaths(RectangleF container)
+        {
+            DisposePaths();
+
+            float deltaX = ((container.Width * (1 - RadiusPercent)) / 2f);
+            float deltaY = ((container.Height * (1 - RadiusPercent)) / 2f);
+            RectangleF axisRect = container;
+            axisRect.Inflate(-deltaX, -deltaY);
+
+            m_arcPath = GraphicsHelper.GetArcPath(axisRect, AxisStartDegrees, AxisLengthDegrees);
+            m_majorTicksPath = new GraphicsPath();
+            m_minorTicksPath = new GraphicsPath();
+            m_labelPath = new GraphicsPath();
+
+            CalculateTicks(m_majorTicksPath, m_minorTicksPath, m_labelPath, axisRect);
+
+            //these areas need to be redrawn now
+            m_redrawRegion.Union(m_arcPath);
+            m_redrawRegion.Union(m_labelPath);
+            m_redrawRegion.Union(m_majorTicksPath);
+            m_redrawRegion.Union(m_minorTicksPath);
+        }
+
+        private void CalculateTicks(GraphicsPath majorPath, GraphicsPath minorPath,
+            GraphicsPath labelPath, RectangleF rect)
+        {
+            int nRange = MaxValue - MinValue;
+            double dEachPointDelta = AxisLengthDegrees / (double)(nRange);
+
+            double majorStartOffset = 0;
+            double majorEndOffset = 0;
+            double minorStartOffset = 0;
+            double minorEndOffset = 0;
+
+            switch (MajorTickPosition)
+            {
+                case TickPosition.Inside:
+                    majorEndOffset = -MajorTickLength;
+                    break;
+                case TickPosition.Middle:
+                    majorStartOffset = MajorTickLength / 2d;
+                    majorEndOffset = -majorStartOffset;
+                    break;
+                case TickPosition.Outside:
+                    majorStartOffset = MajorTickLength;
+                    break;
+            }
+
+            switch (MinorTickPosition)
+            {
+                case TickPosition.Inside:
+                    minorEndOffset = -MinorTickLength;
+                    break;
+                case TickPosition.Middle:
+                    minorStartOffset = MinorTickLength / 2d;
+                    minorEndOffset = -minorStartOffset;
+                    break;
+                case TickPosition.Outside:
+                    minorStartOffset = MinorTickLength;
+                    break;
+            }
+
+            for (int i = MinValue; i <= MaxValue; i++)
+            {
+                double curDeg = AxisStartDegrees - ((i - MinValue) * dEachPointDelta);
+
+                if (i % MajorTickDivision == 0)
+                {
+                    //only draw MinValue if axis is 360 and MinValue and MaxValue have labels
+                    //to keep them from overlapping
+                    if (Math.Abs(AxisLengthDegrees) < 360 || 
+                       (i < MaxValue) || 
+                       ((MinValue % MajorTickDivision) != 0))
+                    {
+                        AddLabel(labelPath, rect, curDeg, i);
+                    }
+
+                    PointF start = GraphicsHelper.GetPointInArc(rect, curDeg, majorStartOffset);
+                    PointF end = GraphicsHelper.GetPointInArc(rect, curDeg, majorEndOffset);
+                    majorPath.StartFigure();
+                    majorPath.AddLine(start, end);
+                    majorPath.CloseFigure();
+                }
+                else if (i % MinorTickDivision == 0)
+                {
+                    PointF start = GraphicsHelper.GetPointInArc(rect, curDeg, minorStartOffset);
+                    PointF end = GraphicsHelper.GetPointInArc(rect, curDeg, minorEndOffset);
+                    minorPath.StartFigure();
+                    minorPath.AddLine(start, end);
+                    minorPath.CloseFigure();
+                }
+            }
+        }
+
+        private void AddLabel(GraphicsPath labelPath, RectangleF rect, double degrees, int value)
+        {
+            double offset = 0;
+
+            switch (LabelPosition)
+            {
+                case LabelPosition.Inside:
+                    offset = -LabelOffset;
+                    break;
+                case LabelPosition.Outside:
+                    offset = LabelOffset;
+                    break;
+            }
+
+            PointF center = GraphicsHelper.GetPointInArc(rect, degrees, offset);
+
+            using (Bitmap bm = new Bitmap(1,1))
+            using (Graphics g = Graphics.FromImage(bm))
+            using (Font font = new Font(LabelFontFamily, LabelFontSize, LabelFontStyle))
+            {
+                SizeF size = SizeF.Empty;
+                try
+                {
+                    size = CustomExtensions.MeasureDisplayStringSize(g, value.ToString(), font);
+                }
+                catch { }
+
+                PointF origin = new PointF(center.X - (size.Width / 2f),
+                                           center.Y - (size.Height / 2f));
+                labelPath.AddString(value.ToString(), font.FontFamily, (int)font.Style, font.Size,
+                    origin, StringFormat.GenericDefault);
+            }
+        }
+
+        private void DisposePaths()
+        {
+            if (m_arcPath != null)
+            {
+                m_arcPath.Dispose();
+                m_arcPath = null;
+            }
+            if (m_majorTicksPath != null)
+            {
+                m_majorTicksPath.Dispose();
+                m_majorTicksPath = null;
+            }
+            if (m_minorTicksPath != null)
+            {
+                m_minorTicksPath.Dispose();
+                m_minorTicksPath = null;
+            }
+            if (m_labelPath != null)
+            {
+                m_labelPath.Dispose();
+                m_labelPath = null;
+            }
+        }
+
+        public void Dispose()
+        {
+            DisposePaths();
+        }
+    }
+}

@@ -1,0 +1,38 @@
+﻿// ***********************************************************************
+// Assembly         : Zeroit.Framework.MiscControls
+// Author           : ZEROIT
+// Created          : 11-22-2018
+//
+// Last Modified By : ZEROIT
+// Last Modified On : 12-19-2018
+// ***********************************************************************
+// <copyright file="HoverState.cs" company="Zeroit Dev Technologies">
+//     Copyright © Zeroit Dev Technologies  2017. All Rights Reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+namespace Zeroit.Framework.MiscControls
+{
+    #region HoverState
+    /// <summary>
+    /// Specifies constants that define the hoverstate at the captionbar or a part of it on a Panel or XPanderPanel.
+    /// </summary>
+    /// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+    /// KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+    /// IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+    /// PURPOSE. IT CAN BE DISTRIBUTED FREE OF CHARGE AS LONG AS THIS HEADER
+    /// REMAINS UNCHANGED.
+    /// </copyright>
+    public enum HoverState
+    {
+        /// <summary>
+        /// The hoverstate in its normal state (none of the other states apply).
+        /// </summary>
+        None,
+        /// <summary>
+        /// The hoverstate over which a mouse pointer is resting.
+        /// </summary>
+        Hover
+    }
+    #endregion
+}

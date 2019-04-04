@@ -1,0 +1,2016 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D2D2347-A05D-4527-8850-EE137371619A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zeroit.Framework.MiscControls</RootNamespace>
+    <AssemblyName>Zeroit.Framework.MiscControls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FRAMEWORKMENUS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\Zeroit.Framework.MiscControls.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;FRAMEWORKMENUS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Release\Zeroit.Framework.MiscControls.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ZeroitStrongKeys.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AngleSelector\AngleSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteMenu\AutocompleteItem.cs" />
+    <Compile Include="AutoCompleteMenu\AutocompleteItems.cs" />
+    <Compile Include="AutoCompleteMenu\AutocompleteListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteMenu\AutocompleteMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteMenu\AutocompleteMenuHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AutoCompleteMenu\Colors.cs" />
+    <Compile Include="AutoCompleteMenu\EventArgs.cs" />
+    <Compile Include="AutoCompleteMenu\IAutocompleteListView.cs" />
+    <Compile Include="AutoCompleteMenu\ITextBoxWrapper.cs" />
+    <Compile Include="AutoCompleteMenu\Range.cs" />
+    <Compile Include="AutoCompleteMenu\TextBoxWrapper.cs" />
+    <Compile Include="AyensuTab\Dotnetrix_TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AyensuTab\TdhEditBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AyensuTab\TdhTabCtl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AyensuTab\TdhTabCtl_Designer.cs" />
+    <Compile Include="AyensuTab\TdhTabCtl_EventArgs.cs" />
+    <Compile Include="AyensuTab\TdhTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AyensuTab\TdhTabPageCollection.cs" />
+    <Compile Include="AyensuTab\TdhTabPageCollectionEditor.cs" />
+    <Compile Include="AyensuTab\TdhTabPageControls.cs" />
+    <Compile Include="AyensuTab\TdhTabReorder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ButtonBarControl\Control\BarItem.cs" />
+    <Compile Include="ButtonBarControl\Control\ButtonBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonBarControl\Control\ButtonBar.Overrides.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonBarControl\Control\ButtonBar.Properties.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonBarControl\Control\CollectionChangedHandler.cs" />
+    <Compile Include="ButtonBarControl\Control\CollectionChangingHandler.cs" />
+    <Compile Include="ButtonBarControl\Control\CollectionClearingHandler.cs" />
+    <Compile Include="ButtonBarControl\Control\ItemChangeHandler.cs" />
+    <Compile Include="ButtonBarControl\Control\ItemChangingHandler.cs" />
+    <Compile Include="ButtonBarControl\Design\Attributes\ImagePropertyAttribute.cs" />
+    <Compile Include="ButtonBarControl\Design\Attributes\MinMaxAttribute.cs" />
+    <Compile Include="ButtonBarControl\Design\Designer\ButtonBarDesigner.cs" />
+    <Compile Include="ButtonBarControl\Design\Editors\AppearanceEditor.cs" />
+    <Compile Include="ButtonBarControl\Design\Editors\GradientAngleEditor.cs" />
+    <Compile Include="ButtonBarControl\Design\Editors\ImageListIndexEditor.cs" />
+    <Compile Include="ButtonBarControl\Design\Editors\RangeEditor.cs" />
+    <Compile Include="ButtonBarControl\Design\Entity\ColorPair.cs" />
+    <Compile Include="ButtonBarControl\Design\Entity\ColorSchemeDefinition.cs" />
+    <Compile Include="ButtonBarControl\Design\Entity\CornerShape.cs" />
+    <Compile Include="ButtonBarControl\Design\Entity\DrawBackGroundEventArgs.cs" />
+    <Compile Include="ButtonBarControl\Design\Entity\DrawItemsEventArgs.cs" />
+    <Compile Include="ButtonBarControl\Design\Entity\HitTestInfo.cs" />
+    <Compile Include="ButtonBarControl\Design\Entity\ThemeProperty.cs" />
+    <Compile Include="ButtonBarControl\Design\Enums\AppearanceAction.cs" />
+    <Compile Include="ButtonBarControl\Design\Enums\ColorScheme.cs" />
+    <Compile Include="ButtonBarControl\Design\Enums\CornerType.cs" />
+    <Compile Include="ButtonBarControl\Design\Enums\DefaultBool.cs" />
+    <Compile Include="ButtonBarControl\Design\Enums\HitArea.cs" />
+    <Compile Include="ButtonBarControl\Design\Enums\ImageAlignment.cs" />
+    <Compile Include="ButtonBarControl\Design\Enums\ItemImageAlignment.cs" />
+    <Compile Include="ButtonBarControl\Design\Enums\State.cs" />
+    <Compile Include="ButtonBarControl\Design\Generics\GenericCancelEventArgs.cs" />
+    <Compile Include="ButtonBarControl\Design\Generics\GenericChangeEventArgs.cs" />
+    <Compile Include="ButtonBarControl\Design\Generics\GenericClickEventArgs.cs" />
+    <Compile Include="ButtonBarControl\Design\Generics\GenericCollection.cs" />
+    <Compile Include="ButtonBarControl\Design\Generics\GenericConverter.cs" />
+    <Compile Include="ButtonBarControl\Design\Generics\GenericEventArgs.cs" />
+    <Compile Include="ButtonBarControl\Design\Generics\ReadOnlyConverter.cs" />
+    <Compile Include="ButtonBarControl\Design\Layout\Appearance.cs" />
+    <Compile Include="ButtonBarControl\Design\Layout\AppearanceBar.cs" />
+    <Compile Include="ButtonBarControl\Design\Layout\AppearanceBorder.cs" />
+    <Compile Include="ButtonBarControl\Design\Layout\AppearanceItem.cs" />
+    <Compile Include="ButtonBarControl\Design\Layout\AppearenceText.cs" />
+    <Compile Include="ButtonBarControl\Design\Utility\PaintUtility.cs" />
+    <Compile Include="ButtonBarControl\Design\Utility\UXTHEME.cs" />
+    <Compile Include="Card\ZeroitCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChatBubble\RightBubble.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckBox\TransparentCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckBox\TransCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckBox\AlterCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Clock\AnalogueClock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clock\AnalogSaz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Amber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Amber.Designer.cs">
+      <DependentUpon>Amber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Blue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Blue.Designer.cs">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\BlueGrey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\BlueGrey.Designer.cs">
+      <DependentUpon>BlueGrey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Brown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Brown.Designer.cs">
+      <DependentUpon>Brown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Cyan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Cyan.Designer.cs">
+      <DependentUpon>Cyan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Green.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Green.Designer.cs">
+      <DependentUpon>Green.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\GreenLight.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\GreenLight.Designer.cs">
+      <DependentUpon>GreenLight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Grey.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Grey.Designer.cs">
+      <DependentUpon>Grey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Indigo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Indigo.Designer.cs">
+      <DependentUpon>Indigo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\LightBlue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\LightBlue.Designer.cs">
+      <DependentUpon>LightBlue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Lime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Lime.Designer.cs">
+      <DependentUpon>Lime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\AmberControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\AmberControl.Designer.cs">
+      <DependentUpon>AmberControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\BlueControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\BlueControl.Designer.cs">
+      <DependentUpon>BlueControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\BlueGrayControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\BlueGrayControl.Designer.cs">
+      <DependentUpon>BlueGrayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\BrownControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\BrownControl.Designer.cs">
+      <DependentUpon>BrownControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Amber.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Blue.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\BlueGrey.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Brown.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Cyan.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\DeepOrange.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Green.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\GreenLight.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Lime.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\LightBlue.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Indigo.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Grey.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Orange.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Pink.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Purple.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\PurpleDeep.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Teal.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Red.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\Colors\Yellow.cs" />
+    <Compile Include="ColorSwatches\MaterialDesign\CyanControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\CyanControl.Designer.cs">
+      <DependentUpon>CyanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\GreenControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\GreenControl.Designer.cs">
+      <DependentUpon>GreenControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\GreenLightControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\GreenLightControl.Designer.cs">
+      <DependentUpon>GreenLightControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\GreyControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\GreyControl.Designer.cs">
+      <DependentUpon>GreyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\IndigoControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\IndigoControl.Designer.cs">
+      <DependentUpon>IndigoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\LightBlueControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\LightBlueControl.Designer.cs">
+      <DependentUpon>LightBlueControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\LimeControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\LimeControl.Designer.cs">
+      <DependentUpon>LimeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\OrangeControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\OrangeControl.Designer.cs">
+      <DependentUpon>OrangeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\OrangeDeepControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\OrangeDeepControl.Designer.cs">
+      <DependentUpon>OrangeDeepControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\PinkControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\PinkControl.Designer.cs">
+      <DependentUpon>PinkControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\PurpleControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\PurpleControl.Designer.cs">
+      <DependentUpon>PurpleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\PurpleDeepControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\PurpleDeepControl.Designer.cs">
+      <DependentUpon>PurpleDeepControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\RedControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\RedControl.Designer.cs">
+      <DependentUpon>RedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\TealControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\TealControl.Designer.cs">
+      <DependentUpon>TealControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\YellowControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\MaterialDesign\YellowControl.Designer.cs">
+      <DependentUpon>YellowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Orange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Orange.Designer.cs">
+      <DependentUpon>Orange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\OrangeDeep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\OrangeDeep.Designer.cs">
+      <DependentUpon>OrangeDeep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Pink.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Pink.Designer.cs">
+      <DependentUpon>Pink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Purple.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Purple.Designer.cs">
+      <DependentUpon>Purple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\PurpleDeep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\PurpleDeep.Designer.cs">
+      <DependentUpon>PurpleDeep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Red.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Red.Designer.cs">
+      <DependentUpon>Red.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Teal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Teal.Designer.cs">
+      <DependentUpon>Teal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorSwatches\Yellow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorSwatches\Yellow.Designer.cs">
+      <DependentUpon>Yellow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBox\AlterComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBox\ColorComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBox\DropDownCombo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AngleSelector\AltitudeAngleSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clock\DigitalClock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColorPicker\ColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\Cells\DecimalCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\Cells\DecimalCell.Designer.cs">
+      <DependentUpon>DecimalCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\Cells\DigitalCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\Cells\DigitalCell.Designer.cs">
+      <DependentUpon>DigitalCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\Cells\DigitalClock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\Cells\DigitalClock.Designer.cs">
+      <DependentUpon>DigitalClock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\Cells\SevenSegmentCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\Cells\SevenSegmentCell.Designer.cs">
+      <DependentUpon>SevenSegmentCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\_Helpers\BaseWControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Digitals\_Helpers\BaseWControl.Designer.cs">
+      <DependentUpon>BaseWControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Digitals\_Helpers\Drawable\CircularAxis.cs" />
+    <Compile Include="Digitals\_Helpers\Drawable\DigitalBar.cs" />
+    <Compile Include="Digitals\_Helpers\Drawable\IDrawable.cs" />
+    <Compile Include="Digitals\_Helpers\Drawable\Needle.cs" />
+    <Compile Include="Digitals\_Helpers\Utils\CustomExtensions.cs" />
+    <Compile Include="Digitals\_Helpers\Utils\EaseFunction.cs" />
+    <Compile Include="Digitals\_Helpers\Utils\GraphicsHelper.cs" />
+    <Compile Include="FastColoredTextBox\AutocompleteItem.cs" />
+    <Compile Include="FastColoredTextBox\AutocompleteMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Bookmarks.cs" />
+    <Compile Include="FastColoredTextBox\Char.cs" />
+    <Compile Include="FastColoredTextBox\CommandManager.cs" />
+    <Compile Include="FastColoredTextBox\Commands.cs" />
+    <Compile Include="FastColoredTextBox\DocumentMap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\EncodingDetector.cs" />
+    <Compile Include="FastColoredTextBox\ExportToHTML.cs" />
+    <Compile Include="FastColoredTextBox\ExportToRTF.cs" />
+    <Compile Include="FastColoredTextBox\FastColoredTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\FileTextSource.cs" />
+    <Compile Include="FastColoredTextBox\FindForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\FindForm.Designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\GoToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\GoToForm.Designer.cs">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Hints.cs" />
+    <Compile Include="FastColoredTextBox\Hotkeys.cs" />
+    <Compile Include="FastColoredTextBox\HotkeysEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\HotkeysEditorForm.Designer.cs">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\LimitedStack.cs" />
+    <Compile Include="FastColoredTextBox\Line.cs" />
+    <Compile Include="FastColoredTextBox\LinesAccessor.cs" />
+    <Compile Include="FastColoredTextBox\MacrosManager.cs" />
+    <Compile Include="FastColoredTextBox\Place.cs" />
+    <Compile Include="FastColoredTextBox\PlatformType.cs" />
+    <Compile Include="FastColoredTextBox\Range.cs" />
+    <Compile Include="FastColoredTextBox\ReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\ReplaceForm.Designer.cs">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Ruler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Ruler.Designer.cs">
+      <DependentUpon>Ruler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FastColoredTextBox\Style.cs" />
+    <Compile Include="FastColoredTextBox\SyntaxDescriptor.cs" />
+    <Compile Include="FastColoredTextBox\SyntaxHighlighter.cs" />
+    <Compile Include="FastColoredTextBox\TextSource.cs" />
+    <Compile Include="FastColoredTextBox\TypeDescriptor.cs" />
+    <Compile Include="FastColoredTextBox\UnfocusablePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FastColoredTextBox\VisualMarker.cs" />
+    <Compile Include="FastTreeList\FastList\FastList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FastTreeList\FastList\FastListBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FastTreeList\FastTreeModel\FastTreeNode.cs" />
+    <Compile Include="FastTreeList\FastTree\FastTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupBox\HeaderGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBox\ElongatedGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBox\CollapsibleGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBox\CollapsibleBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBox\ImageGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBox\GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckBox\ChromeCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Keyboard\TextBoxWithKeyboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Keyboard\TextKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keyboard\VirtualKeyboard.cs" />
+    <Compile Include="Knob\MetroKnob\SimpleKnob.cs" />
+    <Compile Include="Knob\MetroKnob\SimpleKnobDesigner.cs" />
+    <Compile Include="Label\MarqueeText.cs" />
+    <Compile Include="Label\H1Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Label\AlterLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Label\GradientLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LBControls\Base\Renderer.cs" />
+    <Compile Include="LBControls\Base\LBIndustrialCtrlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LBControls\Button\LButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LBControls\Button\ButtonRenderer.cs" />
+    <Compile Include="LBControls\Knob\Renderer.cs" />
+    <Compile Include="LBControls\Utils\ColorManager.cs" />
+    <Compile Include="LBControls\Utils\MathFunctions.cs" />
+    <Compile Include="LBControls\Meters\AnalogMeter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LBControls\Meters\DigitalMeter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LBControls\Led\Led.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LBControls\Led\SegmentDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Led\BandanaLED.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\ArrowCurve\Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Misc\ArrowCurve\Vector.cs" />
+    <Compile Include="Misc\ArrowCurve\Renderer.cs" />
+    <Compile Include="Misc\BlendExample.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\PageList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Misc\BoxContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Misc\CollapsibleCalculator\CollapsibleCalculator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\SlidingScale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Misc\BevelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\SignalStrength.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Misc\ScreenBrightness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Misc\AdobeEyeDropper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\Joystick.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Misc\Eye.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\Favourite_Home_Settings\Favourites.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\Favourite_Home_Settings\Utilities.cs" />
+    <Compile Include="Misc\Favourite_Home_Settings\Home.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\Favourite_Home_Settings\Settings.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\Primitives.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\HypotrochoidAnimated.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\Hypotrochoid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\CustomShape\ShapeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Misc\CustomShape\CBitmapOps.cs" />
+    <Compile Include="Misc\CustomShape\ColorEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Misc\CustomShape\CTraceOutline.cs" />
+    <Compile Include="Misc\CustomShape\FormLoadFileEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Misc\CustomShape\ShapeTypeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Misc\CustomShape\SaveFileEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumericUpDown\TransparentNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\Anidaso\GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\Anidaso\Helper\ColorTransition.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\Anidaso\Helper\Graphics.cs" />
+    <Compile Include="Panel\ChevyExtendedPanel\Win32Wrapper.cs" />
+    <Compile Include="Panel\ChevyExtendedPanel\Enums.cs" />
+    <Compile Include="Panel\ChevyExtendedPanel\DirectionControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\ChevyExtendedPanel\CornerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\ChevyExtendedPanel\CollapseAnimation.cs" />
+    <Compile Include="Panel\ChevyExtendedPanel\ChangeStyleEventArgs.cs" />
+    <Compile Include="Panel\ChevyExtendedPanel\CaptionDraggingEventArgs.cs" />
+    <Compile Include="Panel\ChevyExtendedPanel\CaptionControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\ChevyExtendedPanel\BufferPainting.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\ChevyExtendedPanel\Control.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\CollapsiblePanel\BaseColorCollection.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ColorEditor.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ColorTypeConverter.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ExtendedColor.cs" />
+    <Compile Include="Panel\CollapsiblePanel\GradientColor.cs" />
+    <Compile Include="Panel\CollapsiblePanel\HSLColor.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ImageCollection.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ImageCollectionEditor.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ImageItemCollection.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ImageMapEditor.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ImagePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\CollapsiblePanel\ImageSet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\CollapsiblePanel\ImageSetTypeConverter.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ItemLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\CollapsiblePanel\RoundedRect.cs" />
+    <Compile Include="Panel\CollapsiblePanel\StageImageItems.cs" />
+    <Compile Include="Panel\CollapsiblePanel\TextElementTypeConverter.cs" />
+    <Compile Include="Panel\CollapsiblePanel\TextStyle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\CollapsiblePanel\TextLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\CollapsiblePanel\UITypes.cs" />
+    <Compile Include="Panel\CollapsiblePanel\Control\PandaPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\CollapsiblePanel\Control\PandaPanelGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\CollapsiblePanel\XPPanelTypeConverter.cs" />
+    <Compile Include="Panel\CollapsiblePanel\ColorPair.cs" />
+    <Compile Include="Panel\CollapsiblePanelv2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\SlidingPanel\Helpers\BackgroundSleeper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\SlidingPanel\ZeroitPlutoGradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\SlidingPanel\ZeroitSlidingPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\ExtendedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\KuzaPanel.cs" />
+    <Compile Include="Panel\PopupPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel\ShadowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\OffPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\ZeroitGradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PictureBox\IconPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Range\Helper\Elipse.cs" />
+    <Compile Include="Range\AnidasoRange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ruler\Kanta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shadow\RectShadow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Shadow\RoundShadow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Slider\ZeroitSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Splitter\CollapsibleSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Star\RatingStar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Password\PasswordHoverGenerator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Password\PasswordGenerator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PictureBox\PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RadioButton\TransparentRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RadioButton\PlainRadioButton.cs" />
+    <Compile Include="RichTextBox\RichTextBoxDefault.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Splitter\CollapsibleSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Star\RatingStarSmall.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Star\StarRatingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Star\StarDefault.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Star\Star.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Polygon\RegularPolygon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BezierCurve\BezierSplines.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PropertyGrid\PropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BreadCrumb\BreadCrumb.cs" />
+    <Compile Include="Ribbon\Ribbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Knob\Knob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LBControls\Knob\Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Splitter\ClickableSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SplashScreen\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Led\LedBulb.cs" />
+    <Compile Include="Password\Password.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ruler\RulerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calender\Calender.cs" />
+    <Compile Include="Switch\KokonsaSwitchButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\HorizontalTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\VisualStudioTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrackBar\Anidaso\Helpers\cmd.cs" />
+    <Compile Include="TrackBar\Anidaso\Helpers\CustomControl.cs" />
+    <Compile Include="TrackBar\Anidaso\Helpers\DragCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrackBar\Anidaso\Helpers\Elipse.cs" />
+    <Compile Include="TrackBar\Anidaso\Helpers\UserControl.cs" />
+    <Compile Include="TrackBar\Anidaso\HTrackbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\Anidaso\Slider.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\Anidaso\Trackbar.cs" />
+    <Compile Include="TrackBar\Anidaso\VTrackbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\Multipurpose\ColorPack.cs" />
+    <Compile Include="TrackBar\Multipurpose\ColorGradient.cs" />
+    <Compile Include="TrackBar\Multipurpose\SmartTag.cs" />
+    <Compile Include="TrackBar\Multipurpose\PointFConverter.cs" />
+    <Compile Include="TrackBar\Multipurpose\MultiTrackBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\Multipurpose\gTrackBar.Designer.cs" />
+    <Compile Include="TrackBar\RectTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\SpiralTrackBar\Calcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\SpiralTrackBar\Graphics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\SpiralTrackBar\SpiralTrackBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\SpiralTrackBar\Steps.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrackBar\OdameTracker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XPander\OnOffSwitch.cs" />
+    <Compile Include="TextBox\TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Toggle\ToggleSwitchAllKinds\GraphicExtension\ImageHelper.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\GraphicExtension\GraphicExtension.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\Android.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\Metal.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\Carbon.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\Fancy.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\IOS5.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\Iphone.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\Metro.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\Modern.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\OSX.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Renderers\RendererBase.cs" />
+    <Compile Include="Toggle\ToggleSwitchAllKinds\Control.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrackBar\Winamp.cs" />
+    <Compile Include="Triangle\RoundedTriangle.cs" />
+    <Compile Include="Triangle\Triangle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Switch\OnOffSwitch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RadioButton\AlterRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RadioButton\ChromeRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strips\Strip.cs" />
+    <Compile Include="NotificationBox\NotificationBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Keyboard\Keyboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\ChromeTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Toggle\ToggleButtonX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Toggle\ToggleBig.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrackBar\TrackBarX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrackBar\TrackBarOval.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrackBar\TrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControl\TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBox\ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HeaderLabel\HeaderLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LinkLabel\ZeroitLabelLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Label\ZeroitLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChatBubble\LeftBubble.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumericUpDown\NumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBox\GroupBoxDefault.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBox\SmallTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBox\BigTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RichTextBox\RichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotificationNumber\NotificationNumber.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Toggle\ZeroitToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ControlBox\ControlBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\DuredoTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\NativeMethods.cs" />
+    <Compile Include="DuredoTab\TabStyle.cs" />
+    <Compile Include="DuredoTab\TabStyleProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\TabStyleProviders\TabStyleAngledProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\TabStyleProviders\TabStyleChromeProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\TabStyleProviders\TabStyleDefaultProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\TabStyleProviders\TabStyleIE8Provider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\TabStyleProviders\TabStyleNoneProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\TabStyleProviders\TabStyleRoundedProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\TabStyleProviders\TabStyleVisualStudioProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\TabStyleProviders\TabStyleVS2010Provider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DuredoTab\ThemedColors.cs" />
+    <Compile Include="FlatTab\FlatTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FlatTab\Win32.cs" />
+    <Compile Include="Glow\gGlowBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Glow\gGlowBox.Designer.cs" />
+    <Compile Include="Glow\gGlowGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Glow\gGlowGroupBox.Designer.cs" />
+    <Compile Include="IconEncoder\ColorUsed\ColorBgra.cs" />
+    <Compile Include="IconEncoder\Icon.cs" />
+    <Compile Include="IconEncoder\IconCollection.cs" />
+    <Compile Include="IconEncoder\IconEditor.cs" />
+    <Compile Include="IconEncoder\IconImage.cs" />
+    <Compile Include="IconEncoder\IconInfoStructs.cs" />
+    <Compile Include="IconEncoder\Kernel32.cs" />
+    <Compile Include="IconEncoder\Quantizer.cs" />
+    <Compile Include="IconEncoder\SimpleReader.cs" />
+    <Compile Include="KRBTab\CaptionColorChooser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KRBTab\CaptionColorChooser.Designer.cs" />
+    <Compile Include="KRBTab\CaptionColorChooserEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KRBTab\ICaptionRandomizer.cs" />
+    <Compile Include="KRBTab\KRBTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KRBTab\SelectedIndexChangingEventArgs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KRBTab\Win32\Enum.cs" />
+    <Compile Include="KRBTab\Win32\User32.cs" />
+    <Compile Include="HelperClasses.cs" />
+    <Compile Include="OutlookNavigation\Common\CancelControlEventArgs.cs" />
+    <Compile Include="OutlookNavigation\Common\ChildCollectionEventArgs.cs" />
+    <Compile Include="OutlookNavigation\Common\ChildControlCollection.cs" />
+    <Compile Include="OutlookNavigation\Common\DefaultClass1.cs" />
+    <Compile Include="OutlookNavigation\Common\ExtDrawing.cs" />
+    <Compile Include="OutlookNavigation\Common\IObservable.cs" />
+    <Compile Include="OutlookNavigation\Common\IObserver.cs" />
+    <Compile Include="OutlookNavigation\Common\NativeMethods.cs" />
+    <Compile Include="OutlookNavigation\Common\PopupCancelEventArgs.cs" />
+    <Compile Include="OutlookNavigation\Common\PopupClosedEventArgs.cs" />
+    <Compile Include="OutlookNavigation\Common\PopupWindowHelper.cs" />
+    <Compile Include="OutlookNavigation\Common\PopupWindowHelperMessageFilter.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\ControlState.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\Design\NaviBandDesigner.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\Design\NaviBarDesigner.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\Design\NaviGroupDesigner.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\GradientSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\GradientSplitter.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\InputState.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBand.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandClientArea.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandClientArea.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandCollapsed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandCollection.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandEventArgs.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandOrderComparer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandOrgOrderComparer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandPopup.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandRenderer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandRendererOff7.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBandSetting.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBar.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBarRenderer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBarRendererOff3.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBarRendererOff7.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviBarSettings.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButton.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonCollapse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonCollapse.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonCollection.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonOptions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonOptions.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonRenderer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonRendererOff10.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonRendererOff3.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviButtonRendererOff7.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviColorTable.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviColorTableOff10.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviColorTableOff3.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviColorTableOff3Green.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviColorTableOff3Silver.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviColorTableOff7.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviColorTableOff7Black.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviColorTableOff7Silver.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviControl.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviForm.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviGroup.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviGroupRenderer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviGroupRendererOff3.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviGroupRendererOff7.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviLayout.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviLayoutOff.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviLayoutStyle.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutlookNavigation\NavigationBar\NaviOptionsForm.Designer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviRenderer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviSplitterRenderer.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviSplitterRendererOff3.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviSplitterRendererOff7.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviToolstripOffice07ColorTable.cs" />
+    <Compile Include="OutlookNavigation\NavigationBar\NaviToolstripOffice07Renderer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RibbonMenuPanel\LayoutUtils.cs" />
+    <Compile Include="RibbonMenuPanel\RibbonPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RibbonMenuPanel\Tab.cs" />
+    <Compile Include="RibbonMenuPanel\TabPageSwitcher.cs" />
+    <Compile Include="RibbonMenuPanel\TabPageSwitcherDesigner.cs" />
+    <Compile Include="RibbonMenuPanel\TabStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RibbonMenuPanel\TabStripPage.cs" />
+    <Compile Include="RibbonMenuPanel\TabStripProfessionalRenderer.cs" />
+    <Compile Include="RibbonMenuPanel\TabStripSystemRenderer.cs" />
+    <Compile Include="RibbonMenuPanel\TabStripToolboxItem.cs" />
+    <Compile Include="RibbonMenuPanel\TabToolboxItem.cs" />
+    <Compile Include="RoseTab\RoseTab.cs" />
+    <Compile Include="Shadow\Blur.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Shadow\Shadow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Shadow\ShadowControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabStrip\AyebiTabStrip\AyebiTabStrip.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\BaseClasses\BaseStyledPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabStrip\FameyeTabStrip\Control\FATabStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabStrip\FameyeTabStrip\Control\FATabStripCloseButton.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\Control\FATabStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabStrip\FameyeTabStrip\Control\FATabStripItemCollection.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\Control\FATabStripMenuGlyph.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\Delegates.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\Design\FATabStripDesigner.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\Design\FATabStripItemDesigner.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\Design\ICaptionSupport.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\Enums.cs" />
+    <Compile Include="TabStrip\FameyeTabStrip\Helpers\CollectionWithEvents.cs" />
+    <Compile Include="Transforms\Transforms.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Workaround_Controls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XPander\Panel\Control\Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XPander\Panel\Utilities\BasePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XPander\Panel\Utilities\CaptionStyle.cs" />
+    <Compile Include="XPander\Panel\Utilities\ColorScheme.cs" />
+    <Compile Include="XPander\Panel\Utilities\ColorSchemeChangeEvents.cs" />
+    <Compile Include="XPander\Panel\Utilities\Constants.cs" />
+    <Compile Include="XPander\Panel\Utilities\CustomColors.cs" />
+    <Compile Include="XPander\Panel\Utilities\CustomPanelColors.cs" />
+    <Compile Include="XPander\Panel\Utilities\CustomXPanderPanelColors.cs" />
+    <Compile Include="XPander\Panel\Utilities\HoverState.cs" />
+    <Compile Include="XPander\Panel\Utilities\HoverStateChangeEventArgs.cs" />
+    <Compile Include="XPander\Panel\Utilities\IPanel.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelColors.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelColorsBlack.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelColorsBlue.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelColorsBase.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelColorsOffice.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelColorsOffice2007Black.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelColorsOffice2007Blue.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelColorsOffice2007Silver.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelSettingsManager.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelStyle.cs" />
+    <Compile Include="XPander\Panel\Utilities\PanelStyleChangeEventArgs.cs" />
+    <Compile Include="XPander\Panel\Utilities\UseAntiAlias.cs" />
+    <Compile Include="XPander\Panel\Utilities\UseClearTypeGridFit.cs" />
+    <Compile Include="XPander\Panel\Utilities\XPanderStateChangeEventArgs.cs" />
+    <Compile Include="XPander\Panel\Control\XPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XPander\Panel\Control\XPanderPanelList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XPander\ProgressBar\ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XPander\ProgressBar\ToolStripProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XPander\Renderer\BaseRenderer.cs" />
+    <Compile Include="XPander\Renderer\ColorTableBlack.cs" />
+    <Compile Include="XPander\Renderer\ColorTableBlue.cs" />
+    <Compile Include="XPander\Renderer\Office2007BlackColorTable.cs" />
+    <Compile Include="XPander\Renderer\Office2007BlueColorTable.cs" />
+    <Compile Include="XPander\Renderer\Office2007Renderer.cs" />
+    <Compile Include="XPander\Renderer\Office2007SilverColorTable.cs" />
+    <Compile Include="XPander\Renderer\OfficeColorTable.cs" />
+    <Compile Include="XPander\Renderer\ProfessionalColorTable.cs" />
+    <Compile Include="XPander\Renderer\BaseColorTable.cs" />
+    <Compile Include="XPander\Splitter\Splitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Animations\PeaceAnimator\AnimationFunctions.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Animator.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Animator2D.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Animator3D.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\AnimatorStatus.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\float2D.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\float3D.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\FloatExtensions.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\FPSLimiterKnownValues.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\IAnimator.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\KnownAnimationFunctions.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Path.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Path2D.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Path2DExtensions.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Path3D.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Path3DExtensions.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\PathExtensions.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\PeaceAnimator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Animations\PeaceAnimator\SafeInvoker.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\SafeInvoker`1.cs" />
+    <Compile Include="_Helpers\Animations\PeaceAnimator\Timer.cs" />
+    <Compile Include="_Helpers\DaggerObjectAnimator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\BaseColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\CatColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\CatColorPicker.Designer.cs">
+      <DependentUpon>CatColorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\ColorGradientEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\ColorGradientEditor.designer.cs">
+      <DependentUpon>ColorGradientEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\ColorGradientEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\ColorGradientEditorDialog.Designer.cs">
+      <DependentUpon>ColorGradientEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\ComboColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\ComboColorPicker.Designer.cs">
+      <DependentUpon>ComboColorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\ComboColorPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\ComboColorPickerDialog.Designer.cs">
+      <DependentUpon>ComboColorPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\CustomColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\CustomColorPicker.Designer.cs">
+      <DependentUpon>CustomColorPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\CustomColorPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\CustomColorPickerDialog.Designer.cs">
+      <DependentUpon>CustomColorPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\DashStyleComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\Filler.cs" />
+    <Compile Include="_Helpers\Painters\Filler2.cs" />
+    <Compile Include="_Helpers\Painters\Filler2EditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\Filler2EditorDialog.designer.cs">
+      <DependentUpon>Filler2EditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\Filler2Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\Filler2Panel.Designer.cs">
+      <DependentUpon>Filler2Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\FillerEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\FillerEditorDialog.designer.cs">
+      <DependentUpon>FillerEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\FillerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\FillerPanel.Designer.cs">
+      <DependentUpon>FillerPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\HatchStyleComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\HatchStylePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\HatchStylePanel.Designer.cs">
+      <DependentUpon>HatchStylePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\HSColor.cs" />
+    <Compile Include="_Helpers\Painters\Line.cs" />
+    <Compile Include="_Helpers\Painters\LinearGradientBrush2.cs" />
+    <Compile Include="_Helpers\Painters\LinearGradientModeComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\LinearGradientPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\LinearGradientPanel.Designer.cs">
+      <DependentUpon>LinearGradientPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\LineEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\LineEditorDialog.Designer.cs">
+      <DependentUpon>LineEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\LinePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\LinePanel.Designer.cs">
+      <DependentUpon>LinePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\NoFlickerPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\NoFlickerPanel.Designer.cs">
+      <DependentUpon>NoFlickerPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\Polygon.cs" />
+    <Compile Include="_Helpers\Painters\PolygonEditorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\PolygonEditorDialog.Designer.cs">
+      <DependentUpon>PolygonEditorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\SystemColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\SystemColorPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\SystemColorPickerDialog.Designer.cs">
+      <DependentUpon>SystemColorPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Helpers\Painters\Utils.cs" />
+    <Compile Include="_Helpers\Painters\WebColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\WebColorPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Helpers\Painters\WebColorPickerDialog.Designer.cs">
+      <DependentUpon>WebColorPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_NewlyAdded\ExpandablePanel\AdvancedFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_NewlyAdded\ExpandablePanel\ExpandCollapseButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_NewlyAdded\ExpandablePanel\ExpandCollapseButton.Designer.cs">
+      <DependentUpon>ExpandCollapseButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_NewlyAdded\ExpandablePanel\ExpandCollapseEventArgs.cs" />
+    <Compile Include="_NewlyAdded\ExpandablePanel\ExpandCollapsePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_NewlyAdded\ExpandablePanel\ExpandCollapsePanel.Designer.cs">
+      <DependentUpon>ExpandCollapsePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_NewlyAdded\ExpandablePanel\ExpandCollapsePanelActionList.cs" />
+    <Compile Include="_NewlyAdded\ExpandablePanel\ExpandCollapsePanelDesigner.cs" />
+    <Compile Include="_NewlyAdded\HeaderLayoutPanel\HeaderTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_NewlyAdded\Stimsoft\StiHScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_NewlyAdded\Stimsoft\StiScrollableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="_NewlyAdded\Stimsoft\StiVScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AutoCompleteMenu\AutocompleteMenu.resx">
+      <DependentUpon>AutocompleteMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AyensuTab\TdhTabReorder.resx" />
+    <EmbeddedResource Include="ColorSwatches\Amber.resx">
+      <DependentUpon>Amber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Blue.resx">
+      <DependentUpon>Blue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\BlueGrey.resx">
+      <DependentUpon>BlueGrey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Brown.resx">
+      <DependentUpon>Brown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Cyan.resx">
+      <DependentUpon>Cyan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Green.resx">
+      <DependentUpon>Green.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\GreenLight.resx">
+      <DependentUpon>GreenLight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Grey.resx">
+      <DependentUpon>Grey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Indigo.resx">
+      <DependentUpon>Indigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\LightBlue.resx">
+      <DependentUpon>LightBlue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Lime.resx">
+      <DependentUpon>Lime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\AmberControl.resx">
+      <DependentUpon>AmberControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\BlueControl.resx">
+      <DependentUpon>BlueControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\BlueGrayControl.resx">
+      <DependentUpon>BlueGrayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\BrownControl.resx">
+      <DependentUpon>BrownControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\CyanControl.resx">
+      <DependentUpon>CyanControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\GreenControl.resx">
+      <DependentUpon>GreenControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\GreenLightControl.resx">
+      <DependentUpon>GreenLightControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\GreyControl.resx">
+      <DependentUpon>GreyControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\IndigoControl.resx">
+      <DependentUpon>IndigoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\LightBlueControl.resx">
+      <DependentUpon>LightBlueControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\LimeControl.resx">
+      <DependentUpon>LimeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\OrangeControl.resx">
+      <DependentUpon>OrangeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\OrangeDeepControl.resx">
+      <DependentUpon>OrangeDeepControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\PinkControl.resx">
+      <DependentUpon>PinkControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\PurpleControl.resx">
+      <DependentUpon>PurpleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\PurpleDeepControl.resx">
+      <DependentUpon>PurpleDeepControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\RedControl.resx">
+      <DependentUpon>RedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\TealControl.resx">
+      <DependentUpon>TealControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\MaterialDesign\YellowControl.resx">
+      <DependentUpon>YellowControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Orange.resx">
+      <DependentUpon>Orange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\OrangeDeep.resx">
+      <DependentUpon>OrangeDeep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Pink.resx">
+      <DependentUpon>Pink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Purple.resx">
+      <DependentUpon>Purple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\PurpleDeep.resx">
+      <DependentUpon>PurpleDeep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Red.resx">
+      <DependentUpon>Red.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Teal.resx">
+      <DependentUpon>Teal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorSwatches\Yellow.resx">
+      <DependentUpon>Yellow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Digitals\Cells\DigitalCell.resx">
+      <DependentUpon>DigitalCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Digitals\Cells\DigitalClock.resx">
+      <DependentUpon>DigitalClock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Digitals\Cells\SevenSegmentCell.resx">
+      <DependentUpon>SevenSegmentCell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Digitals\_Helpers\BaseWControl.resx">
+      <DependentUpon>BaseWControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\FastColoredTextBox.resx">
+      <DependentUpon>FastColoredTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\GoToForm.resx">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\HotkeysEditorForm.resx">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastColoredTextBox\ReplaceForm.resx">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FastTreeList\FastList\FastListBase.resx">
+      <DependentUpon>FastListBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\CatColorPicker.resx">
+      <DependentUpon>CatColorPicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\ColorGradientEditor.resx">
+      <DependentUpon>ColorGradientEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\ColorGradientEditorDialog.resx">
+      <DependentUpon>ColorGradientEditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\ComboColorPicker.resx">
+      <DependentUpon>ComboColorPicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\ComboColorPickerDialog.resx">
+      <DependentUpon>ComboColorPickerDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\CustomColorPicker.resx">
+      <DependentUpon>CustomColorPicker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\CustomColorPickerDialog.resx">
+      <DependentUpon>CustomColorPickerDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\Filler2EditorDialog.resx">
+      <DependentUpon>Filler2EditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\Filler2Panel.resx">
+      <DependentUpon>Filler2Panel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\FillerEditorDialog.resx">
+      <DependentUpon>FillerEditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\FillerPanel.resx">
+      <DependentUpon>FillerPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\HatchStylePanel.resx">
+      <DependentUpon>HatchStylePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\LinearGradientPanel.resx">
+      <DependentUpon>LinearGradientPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\LineEditorDialog.resx">
+      <DependentUpon>LineEditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\LinePanel.resx">
+      <DependentUpon>LinePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\NoFlickerPanel.resx">
+      <DependentUpon>NoFlickerPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\PolygonEditorDialog.resx">
+      <DependentUpon>PolygonEditorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\SystemColorPickerDialog.resx">
+      <DependentUpon>SystemColorPickerDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Helpers\Painters\WebColorPickerDialog.resx">
+      <DependentUpon>WebColorPickerDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_NewlyAdded\ExpandablePanel\AdvancedFlowLayoutPanel.resx">
+      <DependentUpon>AdvancedFlowLayoutPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_NewlyAdded\ExpandablePanel\ExpandCollapseButton.resx">
+      <DependentUpon>ExpandCollapseButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_NewlyAdded\ExpandablePanel\ExpandCollapsePanel.resx">
+      <DependentUpon>ExpandCollapsePanel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Button\Button.bmp" />
+    <Content Include="Button\fill.png" />
+    <Content Include="Button\left.png" />
+    <Content Include="Button\right.png" />
+    <Content Include="Glow\gGlowBox.bmp" />
+    <Content Include="Glow\gGlowGroupBox.bmp" />
+    <Content Include="_Helpers\Painters\Graphics\Color.bmp" />
+    <Content Include="_Helpers\Painters\Graphics\First.bmp" />
+    <Content Include="_Helpers\Painters\Graphics\HSL200.png" />
+    <Content Include="_Helpers\Painters\Graphics\Last.bmp" />
+    <Content Include="_Helpers\Painters\Graphics\Next.bmp" />
+    <Content Include="_Helpers\Painters\Graphics\Prev.bmp" />
+    <None Include="Resources\Upload.png" />
+    <None Include="Resources\up_256.png" />
+    <None Include="Resources\icon_struct_hide_collapsed.png" />
+    <None Include="Resources\icon-expand.png" />
+    <None Include="Resources\Expand1.png" />
+    <None Include="Resources\1downarrow1.png" />
+    <None Include="FastColoredTextBox\FCTB_key.snk" />
+    <None Include="Resources\expand.png" />
+    <None Include="Resources\empty.png" />
+    <None Include="Resources\default_icon.png" />
+    <None Include="Resources\collapse.png" />
+    <None Include="Resources\checkbox_yes.png" />
+    <None Include="Resources\checkbox_no.png" />
+    <None Include="Resources\Star_white.png" />
+    <None Include="Resources\Star_Gray.png" />
+    <None Include="Resources\PointRow.png" />
+    <None Include="Resources\NumUp.png" />
+    <None Include="Resources\NumDown.png" />
+    <None Include="Resources\MetroControlsSigNoShadow.png" />
+    <None Include="Resources\tab4.png" />
+    <None Include="Resources\tab3.png" />
+    <None Include="Resources\tab2.bmp" />
+    <None Include="Resources\tab1.png" />
+    <None Include="Resources\pos1.bmp" />
+    <None Include="Resources\bg.bmp" />
+    <None Include="Resources\Cross16.png" />
+    <None Include="Resources\Check16.png" />
+    <None Include="Resources\Delete_16px.png" />
+    <None Include="Resources\Checkmark_16px.png" />
+    <EmbeddedResource Include="Resources\TabIcons.bmp" />
+    <None Include="Resources\UpArrow.png" />
+    <None Include="Resources\TabPressed.png" />
+    <None Include="Resources\TabHover.png" />
+    <None Include="Resources\TabClose.png" />
+    <None Include="Resources\RightNormalOfficeSilver.png" />
+    <None Include="Resources\RightNormalOfficeOlive.png" />
+    <None Include="Resources\RightNormalOfficeBlue.png" />
+    <None Include="Resources\RightNormalKRBBlue.png" />
+    <None Include="Resources\RightNormalBlackGlass.png" />
+    <None Include="Resources\RightHoverOfficeSilver.png" />
+    <None Include="Resources\RightHoverOfficeOlive.png" />
+    <None Include="Resources\RightHoverOfficeBlue.png" />
+    <None Include="Resources\RightHoverKRBBlue.png" />
+    <None Include="Resources\RightHoverBlackGlass.png" />
+    <None Include="Resources\RightDownOfficeSilver.png" />
+    <None Include="Resources\RightDownOfficeOlive.png" />
+    <None Include="Resources\RightDownOfficeBlue.png" />
+    <None Include="Resources\RightDownKRBBlue.png" />
+    <None Include="Resources\RightDownBlackGlass.png" />
+    <None Include="Resources\RightArrowHover.bmp" />
+    <None Include="Resources\RightArrowDown.bmp" />
+    <None Include="Resources\RightArrow.bmp" />
+    <None Include="Resources\PushpinHS.png" />
+    <None Include="Resources\LeftNormalOfficeSilver.png" />
+    <None Include="Resources\LeftNormalOfficeOlive.png" />
+    <None Include="Resources\LeftNormalOfficeBlue.png" />
+    <None Include="Resources\LeftNormalKRBBlue.png" />
+    <None Include="Resources\LeftNormalBlackGlass.png" />
+    <None Include="Resources\LeftHoverOfficeSilver.png" />
+    <None Include="Resources\LeftHoverOfficeOlive.png" />
+    <None Include="Resources\LeftHoverOfficeBlue.png" />
+    <None Include="Resources\LeftHoverKRBBlue.png" />
+    <None Include="Resources\LeftHoverBlackGlass.png" />
+    <None Include="Resources\LeftDownOfficeSilver.png" />
+    <None Include="Resources\LeftDownOfficeOlive.png" />
+    <None Include="Resources\LeftDownOfficeBlue.png" />
+    <None Include="Resources\LeftDownKRBBlue.png" />
+    <None Include="Resources\LeftDownBlackGlass.png" />
+    <None Include="Resources\leftArrowHover.bmp" />
+    <None Include="Resources\leftArrowDown.bmp" />
+    <None Include="Resources\leftArrow.bmp" />
+    <None Include="Resources\InsertTabControlHS.png" />
+    <None Include="Resources\DropDown.bmp" />
+    <None Include="Resources\DownArrow.png" />
+    <None Include="Resources\delete_12x12.png" />
+    <None Include="Resources\CaptionClose.bmp" />
+    <None Include="Resources\Help_16px_1.png" />
+    <None Include="Resources\Help_16px.png" />
+    <None Include="Resources\help_disabled.ico" />
+    <None Include="Resources\help.ico" />
+    <None Include="Resources\tshadowtopright.png" />
+    <None Include="Resources\tshadowright.png" />
+    <None Include="Resources\tshadowdownright.png" />
+    <None Include="Resources\tshadowdownleft.png" />
+    <None Include="Resources\tshadowdown.png" />
+    <None Include="Resources\AddTab.png" />
+    <None Include="Resources\Up.png" />
+    <None Include="Resources\Down.png" />
+    <None Include="Resources\brightness.png" />
+    <EmbeddedResource Include="Resources\pointer_no.cur" />
+    <EmbeddedResource Include="Resources\pointer.cur" />
+    <None Include="Resources\collapse.bmp" />
+    <None Include="Resources\expand_highlight.gif" />
+    <None Include="Resources\expand.gif" />
+    <None Include="Resources\collapse_hightlight.gif" />
+    <None Include="Resources\collapse.gif" />
+    <EmbeddedResource Include="Resources\CollapsiblePanel.bmp" />
+    <EmbeddedResource Include="Resources\TRASH01_Pressed.ICO" />
+    <EmbeddedResource Include="Resources\TRASH01.ICO" />
+    <EmbeddedResource Include="Resources\x.gif" />
+    <EmbeddedResource Include="Resources\Separator.bmp" />
+    <EmbeddedResource Include="Resources\xp.style.glyphs.png" />
+    <EmbeddedResource Include="Resources\SPECIALGROUPEXPANDHOT.png" />
+    <EmbeddedResource Include="Resources\SPECIALGROUPEXPAND.png" />
+    <EmbeddedResource Include="Resources\SPECIALGROUPCOLLAPSEHOT.png" />
+    <EmbeddedResource Include="Resources\SPECIALGROUPCOLLAPSE.png" />
+    <EmbeddedResource Include="Resources\StarOnRed.bmp" />
+    <EmbeddedResource Include="Resources\StarOnGreen.bmp" />
+    <EmbeddedResource Include="Resources\StarOnBlue.bmp" />
+    <EmbeddedResource Include="Resources\StarOff.bmp" />
+    <EmbeddedResource Include="Resources\sonne_2.ico" />
+    <EmbeddedResource Include="Resources\sonne_1.ico" />
+    <EmbeddedResource Include="Resources\sonne.ico" />
+    <EmbeddedResource Include="Resources\shift_down_white.jpg" />
+    <EmbeddedResource Include="Resources\upRestore.cur" />
+    <EmbeddedResource Include="Resources\upDownUp.cur" />
+    <EmbeddedResource Include="Resources\upDownDown.cur" />
+    <EmbeddedResource Include="Resources\up.cur" />
+    <EmbeddedResource Include="Resources\VerticalSpeedNeedle.bmp" />
+    <EmbeddedResource Include="Resources\VerticalSpeedIndicator_Background.bmp" />
+    <EmbeddedResource Include="Resources\TurnCoordinatorMarks.bmp" />
+    <EmbeddedResource Include="Resources\TurnCoordinatorBall.bmp" />
+    <EmbeddedResource Include="Resources\TurnCoordinatorAircraft.bmp" />
+    <EmbeddedResource Include="Resources\TurnCoordinator_Background.bmp" />
+    <EmbeddedResource Include="Resources\SmallNeedleAltimeter.bmp" />
+    <EmbeddedResource Include="Resources\ChevronDown.png" />
+    <EmbeddedResource Include="Resources\ChevronLeft.png" />
+    <EmbeddedResource Include="Resources\ChevronRight.png" />
+    <EmbeddedResource Include="Resources\ChevronUp.png" />
+    <EmbeddedResource Include="Resources\AirSpeedIndicator_Background.bmp" />
+    <EmbeddedResource Include="Resources\AirSpeedNeedle.bmp" />
+    <EmbeddedResource Include="Resources\Altimeter_Background.bmp" />
+    <EmbeddedResource Include="Resources\Bandeau_Dérouleur.bmp" />
+    <EmbeddedResource Include="Resources\AvionicsInstrumentIco.ico" />
+    <EmbeddedResource Include="Resources\caps_down_white.jpg" />
+    <EmbeddedResource Include="Resources\brightness_1.png" />
+    <EmbeddedResource Include="Resources\brightness_2.png" />
+    <EmbeddedResource Include="Resources\brightness_3.png" />
+    <EmbeddedResource Include="Resources\AnchoredSeparator.bmp" />
+    <EmbeddedResource Include="Resources\CalculatorButton.bmp" />
+    <EmbeddedResource Include="Resources\CalculatorTextBox.bmp" />
+    <EmbeddedResource Include="Resources\calc.gif" />
+    <EmbeddedResource Include="Resources\check.gif" />
+    <EmbeddedResource Include="Resources\clicked crumb body.png" />
+    <EmbeddedResource Include="Resources\clicked crumb left end.png" />
+    <EmbeddedResource Include="Resources\clicked crumb right end.png" />
+    <EmbeddedResource Include="Resources\clicked crumb right point.png" />
+    <EmbeddedResource Include="Resources\closePanel.png" />
+    <EmbeddedResource Include="Resources\Collapse.jpg" />
+    <EmbeddedResource Include="Resources\Collapse_h.jpg" />
+    <EmbeddedResource Include="Resources\CollapsibleGroupBox.bmp" />
+    <EmbeddedResource Include="Resources\crumb body.png" />
+    <EmbeddedResource Include="Resources\crumb left end.png" />
+    <EmbeddedResource Include="Resources\crumb right end.png" />
+    <EmbeddedResource Include="Resources\crumb right point.png" />
+    <EmbeddedResource Include="Resources\Expand.jpg" />
+    <EmbeddedResource Include="Resources\Expand_h.jpg" />
+    <EmbeddedResource Include="Resources\down.cur" />
+    <EmbeddedResource Include="Resources\downRestore.cur" />
+    <EmbeddedResource Include="Resources\EraseButton.bmp" />
+    <EmbeddedResource Include="Resources\del.gif" />
+    <EmbeddedResource Include="Resources\eyedropper.bmp" />
+    <EmbeddedResource Include="Resources\eyeDropper.cur" />
+    <EmbeddedResource Include="Resources\HeadingIndicator_Aircraft.bmp" />
+    <EmbeddedResource Include="Resources\HeadingIndicator_Background.bmp" />
+    <EmbeddedResource Include="Resources\HeadingWeel.bmp" />
+    <EmbeddedResource Include="Resources\Horizon_Background.bmp" />
+    <EmbeddedResource Include="Resources\Horizon_GroundSky.bmp" />
+    <EmbeddedResource Include="Resources\hovered crumb body.png" />
+    <EmbeddedResource Include="Resources\hovered crumb left end.png" />
+    <EmbeddedResource Include="Resources\hovered crumb right end.png" />
+    <EmbeddedResource Include="Resources\hovered crumb right point.png" />
+    <None Include="Resources\Ribbon\add.png" />
+    <None Include="Resources\Ribbon\add1.png" />
+    <None Include="Resources\Ribbon\back.png" />
+    <None Include="Resources\Ribbon\document-open.png" />
+    <None Include="Resources\Ribbon\down.png" />
+    <None Include="Resources\Ribbon\edit.png" />
+    <None Include="Resources\Ribbon\filefind.png" />
+    <None Include="Resources\Ribbon\finish.png" />
+    <None Include="Resources\Ribbon\forward.png" />
+    <None Include="Resources\Ribbon\gnome-session.png" />
+    <None Include="Resources\Ribbon\gnome-settings-font.png" />
+    <None Include="Resources\Ribbon\go-first.png" />
+    <None Include="Resources\Ribbon\go-up.png" />
+    <None Include="Resources\Ribbon\gtk-paste.png" />
+    <None Include="Resources\Ribbon\gtk-remove.png" />
+    <None Include="Resources\Ribbon\kedit.png" />
+    <EmbeddedResource Include="Resources\Indicator_Background.bmp" />
+    <EmbeddedResource Include="Resources\LongNeedleAltimeter.bmp" />
+    <EmbeddedResource Include="Resources\Maquette_Avion.bmp" />
+    <EmbeddedResource Include="Resources\left.cur" />
+    <EmbeddedResource Include="Resources\leftRestore.cur" />
+    <EmbeddedResource Include="Resources\leftRightLeft.cur" />
+    <EmbeddedResource Include="Resources\leftRightRight.cur" />
+    <EmbeddedResource Include="Resources\right.cur" />
+    <EmbeddedResource Include="Resources\rightRestore.cur" />
+    <EmbeddedResource Include="Resources\Led.bmp" />
+    <EmbeddedResource Include="Resources\keyboard.ico" />
+    <EmbeddedResource Include="Resources\keyboard_alphabetical.jpg" />
+    <EmbeddedResource Include="Resources\keyboard_kids_lower.jpg" />
+    <EmbeddedResource Include="Resources\keyboard_kids_upper.jpg" />
+    <EmbeddedResource Include="Resources\keyboard_white.jpg" />
+    <EmbeddedResource Include="Resources\RoundedRectangle.png" />
+    <EmbeddedResource Include="Resources\PasswordEyeImage.png" />
+    <EmbeddedResource Include="Resources\iconHeartEmpty.png" />
+    <EmbeddedResource Include="Resources\iconHeartFull.png" />
+    <EmbeddedResource Include="Resources\iconHeartHalf.png" />
+    <EmbeddedResource Include="Resources\iconMiscEmpty.png" />
+    <EmbeddedResource Include="Resources\iconMiscFull.png" />
+    <EmbeddedResource Include="Resources\iconMiscHalf.png" />
+    <EmbeddedResource Include="Resources\iconStarEmpty.png" />
+    <EmbeddedResource Include="Resources\iconStarFull.png" />
+    <EmbeddedResource Include="Resources\iconStartHalf.png" />
+    <EmbeddedResource Include="Resources\Ruer.ico" />
+    <EmbeddedResource Include="Resources\NORMALGROUPCOLLAPSE.png" />
+    <EmbeddedResource Include="Resources\NORMALGROUPCOLLAPSEHOT.png" />
+    <EmbeddedResource Include="Resources\NORMALGROUPEXPAND.png" />
+    <EmbeddedResource Include="Resources\NORMALGROUPEXPANDHOT.png" />
+    <EmbeddedResource Include="Resources\minus.bmp" />
+    <EmbeddedResource Include="Resources\plus.bmp" />
+    <EmbeddedResource Include="Resources\ImageButton.bmp" />
+    <EmbeddedResource Include="Resources\selected crumb body.png" />
+    <EmbeddedResource Include="Resources\selected crumb left end.png" />
+    <EmbeddedResource Include="Resources\selected crumb right end.png" />
+    <EmbeddedResource Include="Resources\selected crumb right point.png" />
+    <None Include="Zeroit.Framework.MiscControls.nuspec" />
+    <None Include="ZeroitStrongKeys.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OutlookNavigation\NavigationBar\img\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

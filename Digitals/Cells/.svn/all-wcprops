@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/33/branches/DotNet2/WControls/Digitals/Cells
+END
+DigitalCell.resx
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/32/branches/DotNet2/WControls/Digitals/Cells/DigitalCell.resx
+END
+DigitalCell.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/32/branches/DotNet2/WControls/Digitals/Cells/DigitalCell.Designer.cs
+END
+DecimalCell.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/32/branches/DotNet2/WControls/Digitals/Cells/DecimalCell.Designer.cs
+END
+DigitalCell.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/33/branches/DotNet2/WControls/Digitals/Cells/DigitalCell.cs
+END
+DecimalCell.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/33/branches/DotNet2/WControls/Digitals/Cells/DecimalCell.cs
+END
+SevenSegmentCell.resx
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/32/branches/DotNet2/WControls/Digitals/Cells/SevenSegmentCell.resx
+END
+SevenSegmentCell.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/32/branches/DotNet2/WControls/Digitals/Cells/SevenSegmentCell.Designer.cs
+END
+SevenSegmentCell.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/33/branches/DotNet2/WControls/Digitals/Cells/SevenSegmentCell.cs
+END
