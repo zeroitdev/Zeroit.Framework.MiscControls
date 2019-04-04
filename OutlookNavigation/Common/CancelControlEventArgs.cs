@@ -7,33 +7,27 @@
 // Last Modified On : 05-11-2018
 // ***********************************************************************
 // <copyright file="CancelControlEventArgs.cs" company="Zeroit Dev Technologies">
-//     Copyright © Zeroit Dev Technologies  2017. All Rights Reserved.
+//    This program is for creating various controls.
+//    Copyright ©  2017  Zeroit Dev Technologies
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+//    You can contact me at zeroitdevnet@gmail.com or zeroitdev@outlook.com
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-#region License and Copyright
 
-/*
- 
-Author:  Jacob Mesu
- 
-Attribution-Noncommercial-Share Alike 3.0 Unported
-You are free:
-
-    * to Share — to copy, distribute and transmit the work
-    * to Remix — to adapt the work
-
-Under the following conditions:
-
-    * Attribution — You must attribute the work and give credits to the author or Zeroit.Framework.MiscControls.Navigation.OutlookNavigation.net
-    * Noncommercial — You may not use this work for commercial purposes. If you want to adapt
-      this work for a commercial purpose, visit Zeroit.Framework.MiscControls.Navigation.OutlookNavigation.net and request the Attribution-Share 
-      Alike 3.0 Unported license for free. 
-
-http://creativecommons.org/licenses/by-nc-sa/3.0/
-
-*/
-#endregion
 
 using System.Windows.Forms;
 

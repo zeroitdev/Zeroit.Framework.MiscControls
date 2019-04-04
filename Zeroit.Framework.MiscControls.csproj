@@ -1509,13 +1509,13 @@
     <Compile Include="_NewlyAdded\HeaderLayoutPanel\HeaderTableLayoutPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_NewlyAdded\Stimsoft\StiHScrollBar.cs">
+    <Compile Include="_NewlyAdded\Shito\StiHScrollBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_NewlyAdded\Stimsoft\StiScrollableControl.cs">
+    <Compile Include="_NewlyAdded\Shito\StiScrollableControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="_NewlyAdded\Stimsoft\StiVScrollBar.cs">
+    <Compile Include="_NewlyAdded\Shito\StiVScrollBar.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
