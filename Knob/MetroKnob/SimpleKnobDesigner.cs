@@ -34,7 +34,7 @@ using System.ComponentModel.Design;
 using System.Drawing;
 using System.Text;
 
-namespace Zeroit.Framework.Metro
+namespace Zeroit.Framework.MiscControls
 {
 
     #region Smart Tag Code

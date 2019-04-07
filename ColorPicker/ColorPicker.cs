@@ -170,6 +170,7 @@ namespace Zeroit.Framework.MiscControls
 
             base.OnPaint(e);
 
+            
         }
 
         

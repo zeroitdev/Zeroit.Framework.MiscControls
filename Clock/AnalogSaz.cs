@@ -458,6 +458,8 @@ namespace Zeroit.Framework.MiscControls
         /// <param name="g">The g.</param>
         private void DrawFace(Graphics g)
         {
+            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             //numbers are in the forecolor except flash number in green as the seconds go by
             Brush brush = new SolidBrush(ForeColor);
             numHrs = b24Hrs ? 24 : 12;
@@ -500,6 +502,8 @@ namespace Zeroit.Framework.MiscControls
         /// <param name="forceDraw">if set to <c>true</c> [force draw].</param>
         private void DrawTime(Graphics g, bool forceDraw)
         {
+            g.SmoothingMode = SmoothingMode.HighQuality;
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             //length of the hands
             float hrLength = FaceRadius * 0.5f;
             float minLength = FaceRadius * 0.7f;

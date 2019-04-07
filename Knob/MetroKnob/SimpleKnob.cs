@@ -36,7 +36,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Zeroit.Framework.MiscControls;
 
-namespace Zeroit.Framework.Metro
+namespace Zeroit.Framework.MiscControls
 {
     /// <summary>
     /// A class collection for rendering a metro-style knob.
